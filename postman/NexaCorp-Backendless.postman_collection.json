@@ -1,0 +1,215 @@
+{
+  "info": {
+    "name": "NexaCorp - Backendless API",
+    "_postman_id": "nexacorp-backendless-collection",
+    "description": "Collection untuk API Backendless proyek NexaCorp Company Profile",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "BASE_URL", "value": "https://moralcoat-us.backendless.app/api" },
+    { "key": "APP_ID", "value": "0D4B28BA-CFEF-42B2-9DA0-34B2720EF0B5" },
+    { "key": "API_KEY", "value": "A5B2D5B7-EFDF-42D1-B9D3-B885EBC5A244" },
+    { "key": "USER_TOKEN", "value": "" },
+    { "key": "BLOG_ID", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res['user-token']) {",
+                  "  pm.collectionVariables.set('USER_TOKEN', res['user-token']);",
+                  "  console.log('Token saved:', res['user-token']);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "application-id", "value": "{{APP_ID}}" },
+              { "key": "secret-key", "value": "{{API_KEY}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"login\": \"admin@nexacorp.id\",\n  \"password\": \"Nexacorp@2026\"\n}"
+            },
+            "url": { "raw": "{{BASE_URL}}/users/login", "host": ["{{BASE_URL}}"], "path": ["users", "login"] }
+          }
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "application-id", "value": "{{APP_ID}}" },
+              { "key": "secret-key", "value": "{{API_KEY}}" },
+              { "key": "user-token", "value": "{{USER_TOKEN}}" }
+            ],
+            "url": { "raw": "{{BASE_URL}}/users/logout", "host": ["{{BASE_URL}}"], "path": ["users", "logout"] }
+          }
+        },
+        {
+          "name": "Current User",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "application-id", "value": "{{APP_ID}}" },
+              { "key": "secret-key", "value": "{{API_KEY}}" },
+              { "key": "user-token", "value": "{{USER_TOKEN}}" }
+            ],
+            "url": { "raw": "{{BASE_URL}}/users/me", "host": ["{{BASE_URL}}"], "path": ["users", "me"] }
+          }
+        },
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "application-id", "value": "{{APP_ID}}" },
+              { "key": "secret-key", "value": "{{API_KEY}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@nexacorp.id\",\n  \"password\": \"Password@123\"\n}"
+            },
+            "url": { "raw": "{{BASE_URL}}/users/register", "host": ["{{BASE_URL}}"], "path": ["users", "register"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Blog",
+      "item": [
+        {
+          "name": "Get All Blogs",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "application-id", "value": "{{APP_ID}}" },
+              { "key": "secret-key", "value": "{{API_KEY}}" }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/data/BlogPost?sortBy=created%20desc&pageSize=50",
+              "host": ["{{BASE_URL}}"],
+              "path": ["data", "BlogPost"],
+              "query": [
+                { "key": "sortBy", "value": "created desc" },
+                { "key": "pageSize", "value": "50" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Blog by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "application-id", "value": "{{APP_ID}}" },
+              { "key": "secret-key", "value": "{{API_KEY}}" }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/data/BlogPost/{{BLOG_ID}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["data", "BlogPost", "{{BLOG_ID}}"]
+            }
+          }
+        },
+        {
+          "name": "Create Blog",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const res = pm.response.json();",
+                  "if (res.objectId) pm.collectionVariables.set('BLOG_ID', res.objectId);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "application-id", "value": "{{APP_ID}}" },
+              { "key": "secret-key", "value": "{{API_KEY}}" },
+              { "key": "user-token", "value": "{{USER_TOKEN}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Judul Artikel Baru\",\n  \"content\": \"## Konten\\n\\nIsi artikel di sini menggunakan **Markdown**.\",\n  \"category\": \"Teknologi\",\n  \"author\": \"admin@nexacorp.id\",\n  \"coverUrl\": \"\"\n}"
+            },
+            "url": { "raw": "{{BASE_URL}}/data/BlogPost", "host": ["{{BASE_URL}}"], "path": ["data", "BlogPost"] }
+          }
+        },
+        {
+          "name": "Update Blog",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "application-id", "value": "{{APP_ID}}" },
+              { "key": "secret-key", "value": "{{API_KEY}}" },
+              { "key": "user-token", "value": "{{USER_TOKEN}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Judul Artikel Diperbarui\",\n  \"content\": \"Konten yang sudah diperbarui.\",\n  \"category\": \"Cloud\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/data/BlogPost/{{BLOG_ID}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["data", "BlogPost", "{{BLOG_ID}}"]
+            }
+          }
+        },
+        {
+          "name": "Delete Blog",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "application-id", "value": "{{APP_ID}}" },
+              { "key": "secret-key", "value": "{{API_KEY}}" },
+              { "key": "user-token", "value": "{{USER_TOKEN}}" }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/data/BlogPost/{{BLOG_ID}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["data", "BlogPost", "{{BLOG_ID}}"]
+            }
+          }
+        },
+        {
+          "name": "Search Blog by Title",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "application-id", "value": "{{APP_ID}}" },
+              { "key": "secret-key", "value": "{{API_KEY}}" }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/data/BlogPost?where=title%20like%20'%25Teknologi%25'&sortBy=created%20desc",
+              "host": ["{{BASE_URL}}"],
+              "path": ["data", "BlogPost"],
+              "query": [
+                { "key": "where", "value": "title like '%Teknologi%'" },
+                { "key": "sortBy", "value": "created desc" }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
