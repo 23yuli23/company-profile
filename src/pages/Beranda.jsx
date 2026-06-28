@@ -8,9 +8,9 @@ const services = [
 ]
 
 const testimonials = [
-  { name: 'Budi Santoso', role: 'Pelanggan Setia, Jakarta', text: 'ASA Coffee benar-benar mengubah cara saya menikmati pagi. Kopinya luar biasa!', avatar: '/avatars/budi-santoso.png' },
-  { name: 'Sari Dewi', role: 'Food Blogger, Bandung', text: 'Single origin Flores-nya juara! Aroma dan rasa yang tidak bisa saya temukan di tempat lain.', avatar: '/avatars/sari-dewi.png' },
-  { name: 'Ahmad Rizki', role: 'Barista, Surabaya', text: 'Kualitas biji kopinya konsisten dan proses roasting-nya sangat presisi. Rekomen banget!', avatar: '/avatars/ahmad-rizki.png' },
+  { name: 'fermin', role: 'Pelanggan Setia, Jakarta', text: 'ASA Coffee benar-benar mengubah cara saya menikmati pagi. Kopinya luar biasa!', avatar: '/avatars/fermin.jpg' },
+  { name: 'flora', role: 'Food Blogger, Bandung', text: 'Single origin Flores-nya juara! Aroma dan rasa yang tidak bisa saya temukan di tempat lain.', avatar: '/avatars/flora.jpg' },
+  { name: 'joseph', role: 'Barista, Surabaya', text: 'Kualitas biji kopinya konsisten dan proses roasting-nya sangat presisi. Rekomen banget!', avatar: '/avatars/joseph.jpg' },
 ]
 
 const stats = [
