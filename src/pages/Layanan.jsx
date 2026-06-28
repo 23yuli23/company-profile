@@ -69,35 +69,35 @@ export default function Layanan() {
       </section>
 
       {/* Services Grid */}
-      <section className="section bg-gray-50">
+      <section className="section bg-gray-950">
         <div className="container-max">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((s) => (
               <div key={s.title} className="card flex flex-col">
                 <div className="p-6 flex-1">
                   <div className="text-4xl mb-4">{s.icon}</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{s.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{s.desc}</p>
+                  <h3 className="text-xl font-bold text-white mb-3">{s.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed mb-4">{s.desc}</p>
 
                   <ul className="space-y-1.5 mb-6">
                     {s.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm text-gray-700">
-                        <span className="w-4 h-4 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs font-bold">✓</span>
+                      <li key={f} className="flex items-center gap-2 text-sm text-gray-300">
+                        <span className="w-4 h-4 rounded-full bg-brand-900 text-brand-400 flex items-center justify-center text-xs font-bold">✓</span>
                         {f}
                       </li>
                     ))}
                   </ul>
 
                   {/* Testimonial */}
-                  <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
-                    <p className="text-xs text-gray-600 italic mb-2">"{s.testimonial.text}"</p>
-                    <div className="text-xs font-semibold text-gray-900">{s.testimonial.name}</div>
+                  <div className="bg-gray-700 rounded-xl p-4 border border-gray-600">
+                    <p className="text-xs text-gray-300 italic mb-2">"{s.testimonial.text}"</p>
+                    <div className="text-xs font-semibold text-white">{s.testimonial.name}</div>
                     <div className="text-xs text-gray-400">{s.testimonial.role}</div>
                   </div>
                 </div>
 
-                <div className="px-6 py-4 border-t border-gray-100">
-                  <span className="text-brand-600 font-bold text-sm">{s.price}</span>
+                <div className="px-6 py-4 border-t border-gray-700">
+                  <span className="text-brand-400 font-bold text-sm">{s.price}</span>
                 </div>
               </div>
             ))}

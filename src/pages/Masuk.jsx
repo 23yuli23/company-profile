@@ -26,20 +26,20 @@ export default function Masuk() {
   }
 
   return (
-    <section className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-20">
+    <section className="min-h-screen bg-gray-950 flex items-center justify-center px-4 py-20">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-600 mb-4 shadow-lg">
-            <span className="text-white font-bold text-2xl">N</span>
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl overflow-hidden mb-4 shadow-lg">
+            <img src="/images/logo.jpeg" alt="ASA Coffee" className="w-full h-full object-cover" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900">Masuk ke NexaCorp</h1>
-          <p className="text-gray-500 mt-2">Akses panel admin dan buat konten baru.</p>
+          <h1 className="text-3xl font-bold text-white">Masuk ke ASA Coffee</h1>
+          <p className="text-gray-400 mt-2">Akses panel admin dan buat konten baru.</p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-md p-8">
+        <div className="bg-gray-800 rounded-2xl shadow-md p-8 border border-gray-700">
           {error && (
-            <div className="mb-4 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm flex items-center gap-2">
+            <div className="mb-4 p-4 bg-red-900/50 border border-red-700 text-red-300 rounded-lg text-sm flex items-center gap-2">
               <span>⚠️</span> {error}
             </div>
           )}
@@ -85,7 +85,7 @@ export default function Masuk() {
 
         <p className="text-center mt-6 text-sm text-gray-500">
           Kembali ke{' '}
-          <Link to="/" className="text-brand-600 font-medium hover:underline">Beranda</Link>
+          <Link to="/" className="text-brand-400 font-medium hover:underline">Beranda</Link>
         </p>
       </div>
     </section>

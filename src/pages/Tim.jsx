@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const roles = ['Head Barista', 'Roaster', 'Quality Control', 'Store Manager', 'Barista', 'Coffee Buyer', 'Pastry Chef', 'Brand Manager', 'Social Media', 'Delivery Ops', 'Customer Service', 'Training Manager']
+const roles = ['Head Barista', 'Roaster', 'Quality Control', 'Store Manager']
 
 export default function Tim() {
   const [members, setMembers] = useState([])
@@ -8,7 +8,7 @@ export default function Tim() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch('https://randomuser.me/api/?results=12&nat=au,gb,us&inc=name,email,picture,location')
+    fetch('https://randomuser.me/api/?results=4&nat=au,gb,us&inc=name,email,picture,location')
       .then((r) => r.json())
       .then((data) => {
         setMembers(
@@ -48,12 +48,12 @@ export default function Tim() {
       </section>
 
       {/* Team Grid */}
-      <section className="section bg-gray-50">
+      <section className="section bg-gray-950">
         <div className="container-max">
           {loading && (
             <div className="flex justify-center items-center py-24">
-              <div className="animate-spin w-10 h-10 border-4 border-brand-600 border-t-transparent rounded-full" />
-              <span className="ml-4 text-gray-500">Memuat data tim...</span>
+              <div className="animate-spin w-10 h-10 border-4 border-brand-500 border-t-transparent rounded-full" />
+              <span className="ml-4 text-gray-400">Memuat data tim...</span>
             </div>
           )}
 
@@ -69,16 +69,16 @@ export default function Tim() {
                     <img
                       src={m.photo}
                       alt={m.name}
-                      className="w-20 h-20 rounded-full object-cover mx-auto ring-4 ring-white shadow-md group-hover:ring-brand-200 transition-all"
+                      className="w-20 h-20 rounded-full object-cover mx-auto ring-4 ring-gray-700 shadow-md group-hover:ring-brand-500 transition-all"
                     />
-                    <span className="absolute bottom-0 right-0 w-5 h-5 bg-green-400 border-2 border-white rounded-full" />
+                    <span className="absolute bottom-0 right-0 w-5 h-5 bg-green-400 border-2 border-gray-800 rounded-full" />
                   </div>
-                  <h3 className="font-bold text-gray-900">{m.name}</h3>
-                  <span className="inline-block mt-1 mb-3 px-3 py-1 bg-brand-50 text-brand-600 rounded-full text-xs font-medium">
+                  <h3 className="font-bold text-white">{m.name}</h3>
+                  <span className="inline-block mt-1 mb-3 px-3 py-1 bg-brand-900 text-brand-300 rounded-full text-xs font-medium">
                     {m.role}
                   </span>
-                  <p className="text-gray-500 text-xs leading-relaxed mb-3">{m.bio}</p>
-                  <div className="text-xs text-gray-400">📍 {m.city}</div>
+                  <p className="text-gray-400 text-xs leading-relaxed mb-3">{m.bio}</p>
+                  <div className="text-xs text-gray-500">📍 {m.city}</div>
                 </div>
               ))}
             </div>

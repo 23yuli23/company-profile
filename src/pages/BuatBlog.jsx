@@ -57,16 +57,16 @@ export default function BuatBlog() {
   }
 
   return (
-    <section className="section bg-gray-50 min-h-screen">
+    <section className="section bg-gray-950 min-h-screen">
       <div className="container-max max-w-4xl">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900">Buat Artikel Baru</h1>
-          <p className="text-gray-500 mt-2">Tulis, preview, dan publish artikel Anda ke blog ASA Coffee.</p>
+          <h1 className="text-4xl font-bold text-white">Buat Artikel Baru</h1>
+          <p className="text-gray-400 mt-2">Tulis, preview, dan publish artikel Anda ke blog ASA Coffee.</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-md p-8 space-y-6">
+        <form onSubmit={handleSubmit} className="bg-gray-800 rounded-2xl shadow-md p-8 space-y-6 border border-gray-700">
           {error && (
-            <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">{error}</div>
+            <div className="p-4 bg-red-900/50 border border-red-700 text-red-300 rounded-lg text-sm">{error}</div>
           )}
 
           {/* Cover Image */}
@@ -79,7 +79,7 @@ export default function BuatBlog() {
               type="file"
               accept="image/*"
               onChange={handleCover}
-              className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-brand-50 file:text-brand-600 hover:file:bg-brand-100 cursor-pointer"
+              className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-brand-900 file:text-brand-300 hover:file:bg-brand-800 cursor-pointer"
             />
           </div>
 
@@ -113,14 +113,14 @@ export default function BuatBlog() {
               <button
                 type="button"
                 onClick={() => setPreview(!preview)}
-                className="text-xs text-brand-600 font-medium hover:underline"
+                className="text-xs text-brand-400 font-medium hover:underline"
               >
                 {preview ? '✏️ Edit' : '👁 Preview'}
               </button>
             </div>
             {preview ? (
-              <div className="prose prose-sm max-w-none border border-gray-200 rounded-lg p-4 min-h-[300px] bg-gray-50">
-                {form.content ? <ReactMarkdown>{form.content}</ReactMarkdown> : <span className="text-gray-400">Tidak ada konten untuk di-preview.</span>}
+              <div className="prose prose-invert prose-sm max-w-none border border-gray-600 rounded-lg p-4 min-h-[300px] bg-gray-900">
+                {form.content ? <ReactMarkdown>{form.content}</ReactMarkdown> : <span className="text-gray-500">Tidak ada konten untuk di-preview.</span>}
               </div>
             ) : (
               <textarea

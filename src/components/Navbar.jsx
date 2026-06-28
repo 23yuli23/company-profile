@@ -25,9 +25,7 @@ export default function Navbar() {
       <div className="container-max flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center">
-            <span className="text-white font-bold text-sm">☕</span>
-          </div>
+          <img src="/images/logo.jpeg" alt="ASA Coffee" className="w-8 h-8 rounded-lg object-cover" />
           <span className="font-bold text-lg text-white">ASA Coffee</span>
         </Link>
 
@@ -40,7 +38,7 @@ export default function Navbar() {
               end={l.to === '/'}
               className={({ isActive }) =>
                 `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  isActive ? 'text-blue-400 bg-gray-800' : 'text-gray-300 hover:text-white hover:bg-gray-800'
+                  isActive ? 'text-brand-400 bg-gray-800' : 'text-gray-300 hover:text-white hover:bg-gray-800'
                 }`
               }
             >
@@ -83,7 +81,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
                 `block px-3 py-2 rounded-md text-sm font-medium ${
-                  isActive ? 'text-blue-400 bg-gray-800' : 'text-gray-300 hover:bg-gray-800'
+                  isActive ? 'text-brand-400 bg-gray-800' : 'text-gray-300 hover:bg-gray-800'
                 }`
               }
             >
@@ -92,11 +90,11 @@ export default function Navbar() {
           ))}
           {user ? (
             <>
-              <Link to="/buat-blog" onClick={() => setOpen(false)} className="block px-3 py-2 text-sm font-medium text-blue-400">+ Buat Blog</Link>
+              <Link to="/buat-blog" onClick={() => setOpen(false)} className="block px-3 py-2 text-sm font-medium text-brand-400">+ Buat Blog</Link>
               <button onClick={() => { handleLogout(); setOpen(false) }} className="block w-full text-left px-3 py-2 text-sm text-red-400">Keluar</button>
             </>
           ) : (
-            <Link to="/masuk" onClick={() => setOpen(false)} className="block px-3 py-2 text-sm font-medium text-blue-400">Masuk</Link>
+            <Link to="/masuk" onClick={() => setOpen(false)} className="block px-3 py-2 text-sm font-medium text-brand-400">Masuk</Link>
           )}
         </div>
       )}

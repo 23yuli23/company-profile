@@ -66,17 +66,17 @@ export default function Beranda() {
       </section>
 
       {/* Company Overview */}
-      <section className="section bg-white">
+      <section className="section bg-gray-900">
         <div className="container-max grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="text-brand-600 font-semibold text-sm uppercase tracking-wide">Tentang Kami</span>
-            <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-6 leading-tight">
+            <span className="text-brand-400 font-semibold text-sm uppercase tracking-wide">Tentang Kami</span>
+            <h2 className="text-4xl font-bold text-white mt-2 mb-6 leading-tight">
               Kopi yang Menghangatkan Setiap Momen
             </h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
+            <p className="text-gray-400 leading-relaxed mb-4">
               Sejak 2016, ASA Coffee telah melayani para pecinta kopi di seluruh Indonesia dengan sajian premium dari biji pilihan yang dipanen langsung dari petani lokal terpercaya.
             </p>
-            <p className="text-gray-600 leading-relaxed mb-8">
+            <p className="text-gray-400 leading-relaxed mb-8">
               Tim kami terdiri dari barista bersertifikat dan roaster berpengalaman yang berdedikasi menghadirkan secangkir kopi sempurna setiap harinya.
             </p>
             <Link to="/tentang" className="btn-primary">Kenali Kami Lebih Dalam →</Link>
@@ -96,19 +96,19 @@ export default function Beranda() {
       </section>
 
       {/* Services */}
-      <section className="section bg-gray-50">
+      <section className="section bg-gray-950">
         <div className="container-max">
           <div className="text-center mb-14">
-            <span className="text-brand-600 font-semibold text-sm uppercase tracking-wide">Yang Kami Tawarkan</span>
-            <h2 className="text-4xl font-bold text-gray-900 mt-2">Menu Unggulan Kami</h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">Dari kopi single origin hingga paket berlangganan — semua hadir untuk melengkapi hari-hari Anda.</p>
+            <span className="text-brand-400 font-semibold text-sm uppercase tracking-wide">Yang Kami Tawarkan</span>
+            <h2 className="text-4xl font-bold text-white mt-2">Menu Unggulan Kami</h2>
+            <p className="text-gray-400 mt-3 max-w-xl mx-auto">Dari kopi single origin hingga paket berlangganan — semua hadir untuk melengkapi hari-hari Anda.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((s) => (
               <div key={s.title} className="card p-6 group">
                 <div className="text-4xl mb-4">{s.icon}</div>
-                <h3 className="font-bold text-gray-900 mb-2 group-hover:text-brand-600 transition-colors">{s.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+                <h3 className="font-bold text-white mb-2 group-hover:text-brand-400 transition-colors">{s.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -119,22 +119,22 @@ export default function Beranda() {
       </section>
 
       {/* Testimonials */}
-      <section className="section bg-white">
+      <section className="section bg-gray-900">
         <div className="container-max">
           <div className="text-center mb-14">
-            <span className="text-brand-600 font-semibold text-sm uppercase tracking-wide">Testimoni</span>
-            <h2 className="text-4xl font-bold text-gray-900 mt-2">Apa Kata Klien Kami</h2>
+            <span className="text-brand-400 font-semibold text-sm uppercase tracking-wide">Testimoni</span>
+            <h2 className="text-4xl font-bold text-white mt-2">Apa Kata Klien Kami</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((t) => (
               <div key={t.name} className="card p-6">
                 <div className="flex text-yellow-400 mb-4">{'★★★★★'}</div>
-                <p className="text-gray-700 leading-relaxed mb-6 italic">"{t.text}"</p>
+                <p className="text-gray-300 leading-relaxed mb-6 italic">"{t.text}"</p>
                 <div className="flex items-center gap-3">
                   <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full object-cover" />
                   <div>
-                    <div className="font-semibold text-gray-900 text-sm">{t.name}</div>
-                    <div className="text-gray-500 text-xs">{t.role}</div>
+                    <div className="font-semibold text-white text-sm">{t.name}</div>
+                    <div className="text-gray-400 text-xs">{t.role}</div>
                   </div>
                 </div>
               </div>

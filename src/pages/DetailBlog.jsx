@@ -38,22 +38,22 @@ export default function DetailBlog() {
 
   if (loading) return (
     <div className="flex justify-center items-center min-h-[60vh]">
-      <div className="animate-spin w-10 h-10 border-4 border-brand-600 border-t-transparent rounded-full" />
+      <div className="animate-spin w-10 h-10 border-4 border-brand-500 border-t-transparent rounded-full" />
     </div>
   )
 
   if (!blog) return null
 
   return (
-    <section className="section bg-gray-50 min-h-screen">
+    <section className="section bg-gray-950 min-h-screen">
       <div className="container-max max-w-3xl">
         <div className="flex items-center justify-between mb-8">
-          <Link to="/blog" className="inline-flex items-center gap-2 text-brand-600 hover:underline text-sm">
+          <Link to="/blog" className="inline-flex items-center gap-2 text-brand-400 hover:underline text-sm">
             ← Kembali ke Daftar Blog
           </Link>
           {user && (
             <div className="flex items-center gap-4">
-              <Link to={`/blog/${id}/edit`} className="text-sm text-brand-600 hover:text-brand-700 font-medium">
+              <Link to={`/blog/${id}/edit`} className="text-sm text-brand-400 hover:text-brand-300 font-medium">
                 ✏️ Edit Artikel
               </Link>
               <button
@@ -71,18 +71,18 @@ export default function DetailBlog() {
           <img src={blog.coverUrl} alt={blog.title} className="w-full h-64 object-cover rounded-2xl mb-8 shadow-md" />
         )}
 
-        <div className="bg-white rounded-2xl shadow-md p-8 sm:p-12">
+        <div className="bg-gray-800 rounded-2xl shadow-md p-8 sm:p-12 border border-gray-700">
           {blog.category && (
-            <span className="inline-block px-3 py-1 bg-brand-50 text-brand-600 rounded-full text-xs font-medium mb-4">
+            <span className="inline-block px-3 py-1 bg-brand-900 text-brand-300 rounded-full text-xs font-medium mb-4">
               {blog.category}
             </span>
           )}
-          <h1 className="text-4xl font-extrabold text-gray-900 leading-tight mb-4">{blog.title}</h1>
-          <div className="flex items-center gap-4 text-sm text-gray-400 mb-8 pb-8 border-b border-gray-100">
+          <h1 className="text-4xl font-extrabold text-white leading-tight mb-4">{blog.title}</h1>
+          <div className="flex items-center gap-4 text-sm text-gray-400 mb-8 pb-8 border-b border-gray-700">
             <span>✍️ {blog.author || 'Tim ASA Coffee'}</span>
             <span>📅 {formatDate(blog.created)}</span>
           </div>
-          <div className="prose prose-lg max-w-none text-gray-700">
+          <div className="prose prose-invert prose-lg max-w-none text-gray-300">
             <ReactMarkdown>{blog.content}</ReactMarkdown>
           </div>
         </div>

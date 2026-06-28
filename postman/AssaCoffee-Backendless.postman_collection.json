@@ -1,8 +1,8 @@
 {
   "info": {
-    "name": "NexaCorp - Backendless API",
-    "_postman_id": "nexacorp-backendless-collection",
-    "description": "Collection untuk API Backendless proyek NexaCorp Company Profile",
+    "name": "AssaCoffee - Backendless API",
+    "_postman_id": "AssaCoffee-backendless-collection",
+    "description": "Collection untuk API Backendless proyek AssaCoffee Company Profile",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
@@ -41,7 +41,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"login\": \"admin@nexacorp.id\",\n  \"password\": \"Nexacorp@2026\"\n}"
+              "raw": "{\n  \"login\": \"admin@assacoffee.id\",\n  \"password\": \"AssaCoffee@2026\"\n}"
             },
             "url": { "raw": "{{BASE_URL}}/users/login", "host": ["{{BASE_URL}}"], "path": ["users", "login"] }
           }
@@ -81,7 +81,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"user@nexacorp.id\",\n  \"password\": \"Password@123\"\n}"
+              "raw": "{\n  \"email\": \"user@assacoffee.id\",\n  \"password\": \"Password@123\"\n}"
             },
             "url": { "raw": "{{BASE_URL}}/users/register", "host": ["{{BASE_URL}}"], "path": ["users", "register"] }
           }
@@ -148,7 +148,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"title\": \"Judul Artikel Baru\",\n  \"content\": \"## Konten\\n\\nIsi artikel di sini menggunakan **Markdown**.\",\n  \"category\": \"Teknologi\",\n  \"author\": \"admin@nexacorp.id\",\n  \"coverUrl\": \"\"\n}"
+              "raw": "{\n  \"title\": \"Judul Artikel Baru\",\n  \"content\": \"## Konten\\n\\nIsi artikel di sini menggunakan **Markdown**.\",\n  \"category\": \"Teknologi\",\n  \"author\": \"admin@assacoffee.id\",\n  \"coverUrl\": \"\"\n}"
             },
             "url": { "raw": "{{BASE_URL}}/data/BlogPost", "host": ["{{BASE_URL}}"], "path": ["data", "BlogPost"] }
           }

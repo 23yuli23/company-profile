@@ -58,7 +58,7 @@ export default function DaftarBlog() {
       </section>
 
       {/* Blog List */}
-      <section className="section bg-gray-50">
+      <section className="section bg-gray-950">
         <div className="container-max">
           {loading && (
             <div className="flex justify-center items-center py-24">
@@ -69,10 +69,10 @@ export default function DaftarBlog() {
           {!loading && filtered.length === 0 && (
             <div className="text-center py-24">
               <div className="text-6xl mb-4">📝</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-white mb-2">
                 {search ? 'Tidak ada artikel yang cocok' : 'Belum ada artikel'}
               </h3>
-              <p className="text-gray-500 mb-6">
+              <p className="text-gray-400 mb-6">
                 {search ? 'Coba kata kunci lain.' : 'Jadilah yang pertama menulis artikel!'}
               </p>
               {!search && (
@@ -94,19 +94,19 @@ export default function DaftarBlog() {
                   </Link>
                   <div className="p-6 flex flex-col flex-1">
                     {blog.category && (
-                      <span className="inline-block px-3 py-1 bg-brand-50 text-brand-600 rounded-full text-xs font-medium mb-3 self-start">
+                      <span className="inline-block px-3 py-1 bg-brand-900 text-brand-300 rounded-full text-xs font-medium mb-3 self-start">
                         {blog.category}
                       </span>
                     )}
                     <Link to={`/blog/${blog.objectId}`}>
-                      <h2 className="font-bold text-gray-900 text-lg mb-2 line-clamp-2 leading-snug hover:text-brand-600 transition-colors">{blog.title}</h2>
+                      <h2 className="font-bold text-white text-lg mb-2 line-clamp-2 leading-snug hover:text-brand-400 transition-colors">{blog.title}</h2>
                     </Link>
-                    <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-4">{excerpt(blog.content)}</p>
-                    <div className="flex items-center justify-between text-xs text-gray-400 border-t border-gray-100 pt-4">
+                    <p className="text-gray-400 text-sm leading-relaxed flex-1 mb-4">{excerpt(blog.content)}</p>
+                    <div className="flex items-center justify-between text-xs text-gray-500 border-t border-gray-700 pt-4">
                       <span>✍️ {blog.author || 'Tim ASA Coffee'}</span>
                       <span>{formatDate(blog.created)}</span>
                     </div>
-                    <Link to={`/blog/${blog.objectId}`} className="mt-3 text-sm text-brand-600 font-medium hover:underline self-start">
+                    <Link to={`/blog/${blog.objectId}`} className="mt-3 text-sm text-brand-400 font-medium hover:underline self-start">
                       Baca selengkapnya →
                     </Link>
                   </div>
