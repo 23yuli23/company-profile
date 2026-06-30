@@ -1,32 +1,8 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "env": {
-    "VITE_BACKENDLESS_APP_ID": "0D4B28BA-CFEF-42B2-9DA0-34B2720EF0B5",
-    "VITE_BACKENDLESS_API_KEY": "A5B2D5B7-EFDF-42D1-B9D3-B885EBC5A244"
-  },
-  "headers": [
+  "rewrites": [
     {
       "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        }
-      ]
+      "destination": "/index.html"
     }
   ]
 }
